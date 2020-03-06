@@ -28,6 +28,7 @@ while (failed_requests <= 3):
         failed_requests += 1
     else:
         print("OK")
+        failed_requests = 0
     sleep(5)
 
 call = client.calls.create(

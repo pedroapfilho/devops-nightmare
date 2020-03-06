@@ -1,7 +1,7 @@
 from twilio.rest import Client
-from time import sleep
 from requests import get
 from dotenv import load_dotenv
+from time import sleep
 import os
 
 load_dotenv()

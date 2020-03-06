@@ -6,33 +6,33 @@ import os
 
 load_dotenv()
 
-account_sid = os.getenv('ACCOUNT_SID')
-auth_token = os.getenv('AUTH_TOKEN')
+ACCOUNT_SID = os.getenv('ACCOUNT_SID')
+AUTH_TOKEN = os.getenv('AUTH_TOKEN')
 
-from_number = os.getenv('FROM_NUMBER')
-devops_number = os.getenv('DEVOPS_NUMBER')
+FROM_NUMBER = os.getenv('FROM_NUMBER')
+DEVOPS_NUMBER = os.getenv('DEVOPS_NUMBER')
 
-health_check = os.getenv('HEALTH_CHECK')
+HEALTH_CHECK = os.getenv('HEALTH_CHECK')
 
-boss_voice_url = os.getenv('BOSS_VOICE_URL')
+BOSS_VOICE_URL = os.getenv('BOSS_VOICE_URL')
 
-client = Client(account_sid, auth_token)
+client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
-failed_requests = 0
+FAILED_REQUESTS = 0
 
-while (failed_requests <= 3):
-    r = get(health_check)
+while (FAILED_REQUESTS <= 3):
+    r = get(HEALTH_CHECK)
     status = r.json()
     if(status == "OK"):
         print("FUCK")
-        failed_requests += 1
+        FAILED_REQUESTS += 1
     else:
         print("OK")
         failed_requests = 0
     sleep(5)
 
 call = client.calls.create(
-    url=boss_voice_url,
-    to=devops_number,
-    from_=from_number
+    url=BOSS_VOICE_URL,
+    to=DEVOPS_NUMBER,
+    from_=FROM_NUMBER
 )

@@ -20,7 +20,7 @@ client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 FAILED_REQUESTS = 0
 
-while (FAILED_REQUESTS <= 3):
+while (FAILED_REQUESTS < 3):
     r = get(HEALTH_CHECK)
     status = r.status_code
     if(status != 200):

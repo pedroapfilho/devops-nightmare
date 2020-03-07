@@ -22,8 +22,8 @@ FAILED_REQUESTS = 0
 
 while (FAILED_REQUESTS <= 3):
     r = get(HEALTH_CHECK)
-    status = r.json()
-    if(status == "OK"):
+    status = r.status_code
+    if(status != 200):
         print("FUCK")
         FAILED_REQUESTS += 1
     else:

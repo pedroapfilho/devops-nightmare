@@ -28,4 +28,4 @@ To run the script, simply run:
 python3 call_devops.py
 ```
 
-It'll ping the health_check endpoint each 5 seconds, if it fails 3 times, then it calls your DevOps engineer with the recording of your boss.
+It'll ping the health_check endpoint, if it fails 3 times, then it calls your DevOps engineer with the recording of your boss.

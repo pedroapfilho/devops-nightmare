@@ -29,7 +29,6 @@ while (FAILED_REQUESTS < 3):
     else:
         print("OK")
         failed_requests = 0
-    sleep(5)
 
 call = client.calls.create(
     url=BOSS_VOICE_URL,
